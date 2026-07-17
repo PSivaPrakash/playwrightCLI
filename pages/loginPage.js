@@ -26,4 +26,10 @@ export class SignIn {
         await expect(this.passwordField).toHaveValue(userData.password)
         await this.loginButtonField.click()
     }
+
+    async userLogout()
+    {
+        await this.page.getByAltText('profile picture').first().click()
+        await this.page.getByText('Logout').click()
+    }
 }

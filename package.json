@@ -6,6 +6,8 @@
   "scripts": {
      "clean": "rimraf allure-results allure-report",
     "test": "npx playwright test",
+    "smoke": "npx playwright test --grep \"@smoke\"",
+    "regression": "npx playwright test --grep \"@regression\"",
     "report": "allure generate allure-results --clean -o allure-report",
     "open-report": "allure open allure-report",
     "allure": "allure serve allure-results"

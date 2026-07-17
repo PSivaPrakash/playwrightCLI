@@ -1,6 +1,6 @@
 import {test} from '../fixtures/modulesFixtures.js'
 import userLoginData from '../test_data/login.json'
-import pimData from '../test_data/pim.json'
+
 
 test.beforeEach('Login', async ({loginPage}) => {
     await loginPage.browserLaunch(userLoginData)
@@ -8,9 +8,8 @@ test.beforeEach('Login', async ({loginPage}) => {
 })
 
 
-test('Create Employee @smoke', async ({pimPage}) => {
-    await pimPage.PimModule()
-    await pimPage.addEmployee(pimData)
+test('Leaves Page @regression', async ({leavesPage}) => {
+    await leavesPage.Leaves()
 })
 
 test.afterEach('Logout User', async ({loginPage}) => {
