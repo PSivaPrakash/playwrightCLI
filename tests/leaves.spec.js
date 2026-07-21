@@ -12,6 +12,6 @@ test('Leaves Page @regression', async ({leavesPage}) => {
     await leavesPage.Leaves()
 })
 
-test.afterEach('Logout User', async ({loginPage}) => {
+test.afterEach('Logout Users', async ({loginPage}) => {
     await loginPage.userLogout()
 })
