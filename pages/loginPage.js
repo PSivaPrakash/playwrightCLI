@@ -9,10 +9,11 @@ export class SignIn {
         this.loginButtonField = page.getByRole('button', {name: ' Login '})
     }
 
-    async browserLaunch(browser)
+    async browserLaunch()
     {
-        await this.page.goto(browser.url)
-        await expect(this.page).toHaveURL(browser.url)
+        await this.page.goto('auth/login')
+        console.log('Current URL:', this.page.url())
+        await expect(this.page).toHaveURL(/.*\/auth\/login$/)
         await expect(this.userNameField).toBeVisible()
         await expect(this.passwordField).toBeVisible()
         await expect(this.loginButtonField).toBeEnabled()
