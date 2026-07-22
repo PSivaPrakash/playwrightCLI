@@ -2,10 +2,9 @@ import {test} from '../fixtures/modulesFixtures.js'
 import userLoginData from '../test_data/login.json'
 import pimData from '../test_data/pim.json'
 
-test.beforeEach('Login', async ({loginPage}) => {
-    await loginPage.browserLaunch(userLoginData)
-    await loginPage.userLogin(userLoginData)
-})
+test.beforeEach(async ({ page }) => {
+    await page.goto('/');
+});
 
 
 test('Create Employee @smoke', async ({pimPage}) => {
@@ -13,6 +12,3 @@ test('Create Employee @smoke', async ({pimPage}) => {
     await pimPage.addEmployee(pimData)
 })
 
-test.afterEach('Logout User', async ({loginPage}) => {
-    await loginPage.userLogout()
-})

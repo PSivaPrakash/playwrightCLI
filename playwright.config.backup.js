@@ -28,7 +28,6 @@ export default defineConfig({
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
     // baseURL: 'http://localhost:3000',
-    baseURL: 'https://opensource-demo.orangehrmlive.com/web/index.php',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
@@ -38,23 +37,10 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
-     {
-    name: 'setup',
-    testDir: './auth',
-    testMatch: '**/*.setup.spec.js',
-     use: {
-      ...devices['Desktop Chrome'],
-    },
-  },
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'],
-        storageState: 'playwright/.auth/user.json',
-       },
-       dependencies: ['setup'],
-      
+      use: { ...devices['Desktop Chrome'] },
     },
-    
 
     // {
     //   name: 'firefox',
