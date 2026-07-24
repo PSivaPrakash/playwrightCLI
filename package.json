@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-     "clean": "rimraf allure-results allure-report",
+    "clean": "rimraf allure-results allure-report",
     "test": "npx playwright test",
     "smoke": "npx playwright test --grep \"@smoke\"",
     "regression": "npx playwright test --grep \"@regression\"",
@@ -20,5 +20,8 @@
     "@playwright/test": "^1.61.1",
     "@types/node": "^26.1.1",
     "allure-playwright": "^3.10.2"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2"
   }
 }
