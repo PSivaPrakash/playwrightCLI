@@ -19,12 +19,12 @@ export class SignIn {
         await expect(this.loginButtonField).toBeEnabled()
     }
 
-    async userLogin(userData)
+    async userLogin()
     {
-        await this.userNameField.fill(userData.userName)
-        await this.passwordField.fill(userData.password)
-        await expect(this.userNameField).toHaveValue(userData.userName)
-        await expect(this.passwordField).toHaveValue(userData.password)
+        await this.userNameField.fill(process.env.ORANGEHRM_USERNAME)
+        await this.passwordField.fill(process.env.ORANGEHRM_PASSWORD)
+        await expect(this.userNameField).toHaveValue(process.env.ORANGEHRM_USERNAME)
+        await expect(this.passwordField).toHaveValue(process.env.ORANGEHRM_PASSWORD)
         await this.loginButtonField.click()
     }
 
